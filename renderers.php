@@ -369,7 +369,7 @@ class theme_bcu_core_renderer extends core_renderer {
             	//$branchtitle = get_string('events', 'theme_bcu');
             	$branchtitle = "Eventos";
             	$branchlabel = '<i class="fa fa-calendar"></i> '.$branchtitle;
-            	$branchurl   = new moodle_url('/calendar/view.php');
+            	$branchurl   = new moodle_url('/calendar/view.php?view=month');
             	$branchsort  = 10003;
             	$branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }

@@ -47,7 +47,8 @@ $hasmarket2 = (!empty($PAGE->theme->settings->market2));
 $hasmarket3 = (!empty($PAGE->theme->settings->market3));
 $hasmarket4 = (!empty($PAGE->theme->settings->market4));
 
-if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
+if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { 
+if (!isloggedin()){?>
 <div class="container slidewrap">
 <div id="main-slider" class="flexslider">
 <ul class="slides">
@@ -112,7 +113,7 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 </div>
 </div>
 
-<?php } ?>
+<?php }} ?>
 
 <?php if (!empty($PAGE->theme->settings->infobox)) { ?>
     <div id="theinfo" class="container">
@@ -126,7 +127,7 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 
 <div id="marketblocks" class="container">
 <div class="row-fluid"> 
-<?php
+<?php 
 $marketclass = " ";
 if ($hasmarket1 && !$hasmarket2 && !$hasmarket3 && !$hasmarket4) {
 	$marketclass = "span12";
