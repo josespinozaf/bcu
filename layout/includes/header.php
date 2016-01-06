@@ -138,7 +138,7 @@ echo $OUTPUT->doctype();
      </div>
   <?php 
       
-  if (isloggedin()){
+  if (isloggedin() && !is_siteadmin()){
   	  echo' <div class="headerlogo">';
            
       $asistencias = 11;
