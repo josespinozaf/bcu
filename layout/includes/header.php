@@ -149,7 +149,7 @@ echo $OUTPUT->doctype();
   }
   while ($row = mysql_fetch_array($result)) {
   	$semanaactual = $row['semana'];
-  	$asistenciasnecesarias = $row['totalasistencias'];
+  	$asistenciasnecesarias = (double) $row['totalasistencias'];
   }
 
 $resulta = mysql_query("SELECT DISTINCT asistencias2.*, fitnessgram.RUT FROM asistencias2 INNER JOIN fitnessgram WHERE asistencias2.rut = fitnessgram.RUT AND fitnessgram.email = '$usermail' AND asistencias2.Periodo='S-SEM. 2012/1'", $db);
@@ -167,17 +167,16 @@ while ($row = mysql_fetch_array($resulta)) {
 }
 $asisttot=$asistenciasperiodo;
 
+
   if (isloggedin() && !is_siteadmin()){
   	
   	  echo' <div class="headerlogo">';
-  	
-      $asistencias = 11;
-      $asistenciasbien = 12;
-      $asistenciasuy = $asistenciasbien-2;
-            if ($asistencias>=$asistenciasbien) {
+      $asistenciasuy = $asistenciasnecesarias-2;
+    
+            if ($asisttot>=$asistenciasnecesarias) {
                 echo '<a href="#aldia" id="login_pop"><img border="0" alt="Atrasado" src="http://i.imgur.com/RDTG9vO.jpg" width="56.5156px" heigth="56.5156px"></a>';
       }
-      else if ($asistencias>=$asistenciasuy && $asistencias<$asistenciasbien) {
+      else if ($asisttot>=$asistenciasuy && $asisttot<$asistenciasnecesarias) {
       	echo '<a href="#peligro" id="login_pop"><img border="0" alt="Atrasado" src="http://i.imgur.com/jT9KI0n.jpg" width="56.5156px" heigth="56.5156px"></a>';
       }
       else {
