@@ -137,10 +137,40 @@ echo $OUTPUT->doctype();
      <span title='<?php echo $PAGE->heading ?>'><?php echo $PAGE->heading ?></span>
      </div>
   <?php 
-      
+  include ("/../../local/wellness/connect.php");
+  global $USER, $CFG;
+  $userid= $USER->id;
+  $usermail= $USER->email;
+  
+  $result = mysql_query("SELECT * FROM cantasist WHERE DATE(NOW()) between diainicio and diatermino", $db);
+  
+  if (!$result) {
+  	die("Error en la peticion SQL: " . mysql_error());
+  }
+  while ($row = mysql_fetch_array($result)) {
+  	$semanaactual = $row['semana'];
+  	$asistenciasnecesarias = $row['totalasistencias'];
+  }
+
+$resulta = mysql_query("SELECT DISTINCT asistencias2.*, fitnessgram.RUT FROM asistencias2 INNER JOIN fitnessgram WHERE asistencias2.rut = fitnessgram.RUT AND fitnessgram.email = '$usermail' AND asistencias2.Periodo='S-SEM. 2012/1'", $db);
+$asistenciasperiodo = 0;
+while ($row = mysql_fetch_array($resulta)) {
+	if ($row['Asistencia'] == '1'){
+		$asistenciasperiodo = $asistenciasperiodo + 1;
+	}
+	else if ($row['Asistencia'] == '0,5'){
+		$asistenciasperiodo = $asistenciasperiodo + 0.5;
+	}
+	else if ($row['Asistencia'] == '-1'){
+		$asistenciasperiodo = $asistenciasperiodo - 1;
+	}
+}
+$asisttot=$asistenciasperiodo;
+
   if (isloggedin() && !is_siteadmin()){
+  	
   	  echo' <div class="headerlogo">';
-           
+  	
       $asistencias = 11;
       $asistenciasbien = 12;
       $asistenciasuy = $asistenciasbien-2;
@@ -153,6 +183,7 @@ echo $OUTPUT->doctype();
       else {
       	echo '<a href="#atrasado" id="login_pop"><img border="0" alt="Atrasado" src="http://i.imgur.com/AuzuiVW.jpg" width="56.5156px" heigth="56.5156px"></a>';
       }
+ 
   }
      ?>
 		</div>
@@ -200,7 +231,9 @@ echo $OUTPUT->doctype();
 
 <a href="#x" class="overlay" id="atrasado"></a>
         <div class="popup">
-            <center><h3>Lo siento, estas BLOQUEADO</h3></center>
+            <center><h3><?php echo 'Estas en la semana '.$semanaactual;?></h3></center>
+            <h3><?php echo 'Debes llevar '. $asistenciasnecesarias.' asistencias.'?></h3>
+            <h3><?php echo 'Llevas '. $asistenciasperiodo.' asistencias.'?></h3>
             <h5>Debes asistir entre 8am y 9:30am o entre 5pm<br><center> y 7pm al gym o a las outfits disponibles.</center></h5>
             <center><h6></h6></center>
             <a class="close" href="#close"></a>
@@ -208,15 +241,18 @@ echo $OUTPUT->doctype();
         
 <a href="#x" class="overlay" id="peligro"></a>
         <div class="popup">
-            <center><h3>CUIDADO! El 20-08 se viene bloqueo!</h3></center>
-            <h3>Estas a 2 asistencias</h3>
+            <center><h3><?php echo 'Estas en la semana '.$semanaactual;?></h3></center>
+            <h3><?php echo 'Debes llevar '. $asistenciasnecesarias.' asistencias.'?></h3>
+            <h3><?php echo 'Llevas '. $asistenciasperiodo.' asistencias.'?></h3>
             <center><h4>Ponte al dia y evitaras bloqueos futuros.</h4></center>
             <a class="close" href="#close"></a>
         </div>
 
 <a href="#x" class="overlay" id="aldia"></a>
         <div class="popup">
-            <center><h3>Vas al dia! Muy bien!</h3></center>
+            <center><h3><?php echo 'Estas en la semana '.$semanaactual;?></h3></center>
+            <h3><?php echo 'Debes llevar '. $asistenciasnecesarias.' asistencias.'?></h3>
+            <h3><?php echo 'Debes llevar '. $asistenciasperiodo.' asistencias.'?></h3>
             <h4>Sigue asi y evitaras bloqueos futuros.</h4>
             <a class="close" href="#close"></a>
         </div>
