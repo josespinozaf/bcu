@@ -115,7 +115,9 @@ if (!isloggedin()){?>
 
 <?php }} ?>
 
-<?php if (!empty($PAGE->theme->settings->infobox)) { ?>
+<?php 
+if (!isloggedin()){
+if (!empty($PAGE->theme->settings->infobox)) { ?>
     <div id="theinfo" class="container">
         <div id="theinfo-internal">
             <div class="row-fluid">
@@ -181,33 +183,34 @@ if ($hasmarket4) {
 	   <?php echo $OUTPUT->get_setting('market4', 'format_html');?>
     </div>
 <?php
-}
+}}
 ?>
  
     
  </div>      
  </div>
  
-<?php
-if (!empty($PAGE->theme->settings->infobox2)) {
-?>
- <div id="themessage" class="container">
-	<div id="themessage-internal"><div class="row-fluid">
+ <?php
+// if (isloggedin()){
+// if (!empty($PAGE->theme->settings->infobox2)) {
+// ?>
+<!--  <div id="themessage" class="container"> -->
+<!-- 	<div id="themessage-internal"><div class="row-fluid"> -->
 	
-		<?php  echo $OUTPUT->get_setting('infobox2', 'format_html');; ?>
 		
-	</div></div>
-</div>
-<?php
-}
-?>
+		
+<!-- 	</div></div> -->
+<!-- </div> -->
+ <?php
+// }}
+// ?>
 
 
 <div class="container outercont">
     <div id="page-content" class="row-fluid">
      <div id="page-navbar" class="span12">
-            <nav class="breadcrumb-button"><?php //echo $OUTPUT->page_heading_button(); ?></nav>
-            <?php //echo $OUTPUT->navbar(); ?>
+            <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+            <?php echo $OUTPUT->navbar(); ?>
     </div>
         <?php
         if($left == 1) {
@@ -217,12 +220,15 @@ if (!empty($PAGE->theme->settings->infobox2)) {
         <section id="region-main" class="span9 <?php if ($left) { echo ' '; } else { echo 'desktop-first-column'; } ?> ">
             <?php
             echo $OUTPUT->course_content_header();
+            echo "<br>";
+            echo $OUTPUT->get_setting('infobox2', 'format_html'); 
             echo $OUTPUT->main_content();
             echo $OUTPUT->course_content_footer();
             ?>
         </section>
         <?php
             if(isloggedin()) {
+            	echo "<br>";
                 echo $OUTPUT->blocks('side-post', 'span3');
             }
         ?>
