@@ -220,8 +220,10 @@ if ($hasmarket4) {
         <section id="region-main" class="span9 <?php if ($left) { echo ' '; } else { echo 'desktop-first-column'; } ?> ">
             <?php
             echo $OUTPUT->course_content_header();
+            if (isloggedin()){
             echo "<br>";
             echo $OUTPUT->get_setting('infobox2', 'format_html'); 
+            }
             echo $OUTPUT->main_content();
             echo $OUTPUT->course_content_footer();
             ?>
