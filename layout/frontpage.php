@@ -194,7 +194,7 @@ if (!empty($PAGE->theme->settings->infobox2)) {
  <div id="themessage" class="container">
 	<div id="themessage-internal"><div class="row-fluid">
 	
-		<?php echo $OUTPUT->get_setting('infobox2', 'format_html');; ?>
+		<?php  echo $OUTPUT->get_setting('infobox2', 'format_html');; ?>
 		
 	</div></div>
 </div>
@@ -206,8 +206,8 @@ if (!empty($PAGE->theme->settings->infobox2)) {
 <div class="container outercont">
     <div id="page-content" class="row-fluid">
      <div id="page-navbar" class="span12">
-            <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-            <?php echo $OUTPUT->navbar(); ?>
+            <nav class="breadcrumb-button"><?php //echo $OUTPUT->page_heading_button(); ?></nav>
+            <?php //echo $OUTPUT->navbar(); ?>
     </div>
         <?php
         if($left == 1) {
@@ -222,11 +222,12 @@ if (!empty($PAGE->theme->settings->infobox2)) {
             ?>
         </section>
         <?php
-            if($left == 0) {
+            if(isloggedin()) {
                 echo $OUTPUT->blocks('side-post', 'span3');
             }
         ?>
     </div>
     </div>
+    
 <?php 
 require_once(dirname(__FILE__) . '/includes/footer.php');

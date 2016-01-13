@@ -211,13 +211,9 @@ $asisttot=$asistenciasperiodo;
                             <ul class="nav pull-right">
                                 <?php //CAMBIO DE IDIOMA!!!!!!
                                 if (empty($PAGE->layout_options['langmenu']) || $PAGE->layout_options['langmenu']) {
-                                    //echo $OUTPUT->lang_menu();
+                                    echo $OUTPUT->lang_menu();
                                 }
                                 ?>
-                                <li class="hbl"><a href="#" class="moodlezoom"><i class="fa fa-indent fa-lg"></i> <span class="zoomdesc"><?php echo get_string('hideblocks', 'theme_bcu') ?></span></a></li>
-                                <li class="sbl"><a href="#" class="moodlezoom"><i class="fa fa-outdent fa-lg"></i> <span class="zoomdesc"><?php echo get_string('showblocks', 'theme_bcu') ?></span></a></li>
-                                <li class="hbll"><a href="#" class="moodlewidth"><i class="fa fa-expand fa-lg"></i> <span class="zoomdesc"><?php echo get_string('fullscreen', 'theme_bcu') ?></span></a></li>
-                                <li class="sbll"><a href="#" class="moodlewidth"><i class="fa fa-compress fa-lg"></i> <span class="zoomdesc"><?php echo get_string('standardview', 'theme_bcu') ?></span></a></li>
                             </ul>
                             <div id="edittingbutton" class="pull-right breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); //PERSONALIZAR LA PAGINA?></div>
                         </div>
