@@ -214,6 +214,8 @@ $asisttot=$asistenciasperiodo;
                                     echo $OUTPUT->lang_menu();
                                 }
                                 ?>
+                                <li class="hbll"><a href="#" class="moodlewidth"><i class="fa fa-expand fa-lg"></i> <span class="zoomdesc"><?php echo get_string('fullscreen', 'theme_bcu') ?></span></a></li>
+                                <li class="sbll"><a href="#" class="moodlewidth"><i class="fa fa-compress fa-lg"></i> <span class="zoomdesc"><?php echo get_string('standardview', 'theme_bcu') ?></span></a></li>
                             </ul>
                             <div id="edittingbutton" class="pull-right breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); //PERSONALIZAR LA PAGINA?></div>
                         </div>
