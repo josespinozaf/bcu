@@ -311,7 +311,7 @@ class theme_bcu_core_renderer extends core_renderer {
         if (isloggedin() && !isguestuser()) {
             if (!empty($PAGE->theme->settings->enablehome)) {
                 $branchtitle = get_string('home');
-                $branchlabel = '<i class="fa fa-home"></i> '.$branchtitle;
+                $branchlabel = '<i class="fa fa-home"></i>'.$branchtitle;
                 $branchurl   = new moodle_url('/');
                 $branchsort  = 9998;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
@@ -320,12 +320,12 @@ class theme_bcu_core_renderer extends core_renderer {
             if (!empty($PAGE->theme->settings->enablemyhome)) {
                 //$branchtitle = get_string('myhome');
             	$branchtitle = "Clases y Rutinas";
-                $branchlabel = '<i class="fa fa-dashboard"></i> '.$branchtitle;
+                $branchlabel = '<i class="fa fa-trophy"></i>'.$branchtitle;
                 $branchurl   = new moodle_url('');
                 $branchsort  = 9999;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
-                $branch->add(format_string('Clases'), new moodle_url('/local/wellness/clases.php'),format_string('Clases'));
-                $branch->add(format_string('Sala de Pesas'), new moodle_url('/local/wellness/salapesas.php'),format_string('Sala de Pesas'));
+                $branch->add('<i class="fa fa-futbol-o"></i>'.format_string('Clases'), new moodle_url('/local/wellness/clases.php'),format_string('Clases'));
+                $branch->add('<i class="fa fa-heartbeat"></i>'.format_string('Sala de Pesas'), new moodle_url('/local/wellness/salapesas.php'),format_string('Sala de Pesas'));
             }
             
           
@@ -342,7 +342,7 @@ class theme_bcu_core_renderer extends core_renderer {
             if (!empty($PAGE->theme->settings->enablemyhome)) {
                 //$branchtitle = get_string('mysites', 'theme_bcu');
                 $branchtitle = "Fitnessgram";
-                $branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
+                $branchlabel = '<i class="fa fa-line-chart"></i>'.$branchtitle;
                 $branchurl   = new moodle_url('/local/wellness/fitnessgram.php');
                 $branchsort  = 10001;
 
@@ -364,7 +364,7 @@ class theme_bcu_core_renderer extends core_renderer {
             if (!empty($PAGE->theme->settings->enableevents)) {
             	//$branchtitle = get_string('events', 'theme_bcu');
             	$branchtitle = "Asistencias";
-            	$branchlabel = '<i class="fa fa-calendar"></i> '.$branchtitle;
+            	$branchlabel = '<i class="fa fa-check"></i>'.$branchtitle;
             	$branchurl   = new moodle_url('/local/wellness/asistencias.php');
             	$branchsort  = 10002;
             	$branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
