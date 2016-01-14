@@ -1,12 +1,12 @@
 #navwrap {
     clear: both;
-    border-bottom: 3px solid #b7b3ef;
+    border-bottom: 1px solid #b7b3ef;
 }
 
 .navbar {
     clear: none;
     float: none;
-    margin-bottom: 0;
+    margin-bottom: -1px;
     min-width: 40%;
     margin-top: 0px;
     margin-left: -20px;
@@ -93,7 +93,7 @@
 }
 
 .navbar .nav > li > a {
-    border-bottom: 1px solid #ccc !important;
+    border-bottom: 1px solid #b7b3ef !important;
     background: #fff !important;
     margin-bottom: 0px;
 }
