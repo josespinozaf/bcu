@@ -321,16 +321,14 @@ class theme_bcu_core_renderer extends core_renderer {
                 //$branchtitle = get_string('myhome');
             	$branchtitle = "Clases y Rutinas";
                 $branchlabel = '<i class="fa fa-dashboard"></i> '.$branchtitle;
-                $branchurl   = new moodle_url('/local/wellness/rutinas.php');
+                $branchurl   = new moodle_url('');
                 $branchsort  = 9999;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
-                list() = $branch->add(format_string('Clases'), new moodle_url('local/wellness/clases.php'), format_string('Clases'));
-                list() = $branch->add(format_string('Sala de Pesas'), new moodle_url('local/wellness/salapesas.php'), format_string('Sala de Pesas'));
-                                 
-                                      
-                              
-                                } 
+                $branch->add(format_string('Clases'), new moodle_url('/local/wellness/clases.php'),format_string('Clases'));
+                $branch->add(format_string('Sala de Pesas'), new moodle_url('/local/wellness/salapesas.php'),format_string('Sala de Pesas'));
+            }
             
+          
             
 //             if (!empty($PAGE->theme->settings->enableevents)) {
 //                 //$branchtitle = get_string('events', 'theme_bcu');
