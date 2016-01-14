@@ -324,9 +324,8 @@ class theme_bcu_core_renderer extends core_renderer {
                 $branchurl   = new moodle_url('/local/wellness/rutinas.php');
                 $branchsort  = 9999;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
-                list() = $branch->add(format_string('Clases'), new moodle_url('local/wellness/clases.php'),
-                                                    format_string('Clases OUTDOOR'));
-                list() = $branch->add(format_string('Salas de Pesas'), new moodle_url('local/wellness/salapesas.php'));
+                list() = $branch->add(format_string('Clases'), new moodle_url('local/wellness/clases.php'), format_string('Clases'));
+                list() = $branch->add(format_string('Sala de Pesas'), new moodle_url('local/wellness/salapesas.php'), format_string('Sala de Pesas'));
                                  
                                       
                               
