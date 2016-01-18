@@ -174,13 +174,13 @@ $asisttot=$asistenciasperiodo;
       $asistenciasuy = $asistenciasnecesarias-2;
     
             if ($asisttot>=$asistenciasnecesarias) {
-                echo '<a href="#aldia" id="login_pop"><img border="0" alt="Atrasado" src="http://i.imgur.com/RDTG9vO.jpg" width="56.5156px" heigth="56.5156px"></a>';
+                echo '<a href="#aldia" id="login_pop"><img border="0" alt="Atrasado" src="http://i.imgur.com/ajtsY07.jpg" width="56.5156px" heigth="56.5156px"></a>';
       }
       else if ($asisttot>=$asistenciasuy && $asisttot<$asistenciasnecesarias) {
-      	echo '<a href="#peligro" id="login_pop"><img border="0" alt="Atrasado" src="http://i.imgur.com/jT9KI0n.jpg" width="56.5156px" heigth="56.5156px"></a>';
+      	echo '<a href="#peligro" id="login_pop"><img border="0" alt="Atrasado" src="http://i.imgur.com/wgORoDf.jpg" width="56.5156px" heigth="56.5156px"></a>';
       }
       else {
-      	echo '<a href="#atrasado" id="login_pop"><img border="0" alt="Atrasado" src="http://i.imgur.com/AuzuiVW.jpg" width="56.5156px" heigth="56.5156px"></a>';
+      	echo '<a href="#atrasado" id="login_pop"><img border="0" alt="Atrasado" src="http://i.imgur.com/wgORoDf.jpg" width="56.5156px" heigth="56.5156px"></a>';
       }
  
   }
@@ -231,7 +231,7 @@ $asisttot=$asistenciasperiodo;
             <center><h3><?php echo 'Estas en la semana '.$semanaactual;?></h3></center>
             <h3><?php echo 'Debes llevar '. $asistenciasnecesarias.' asistencias.'?></h3>
             <h3><?php echo 'Llevas '. $asistenciasperiodo.' asistencias.'?></h3>
-            <h5>Debes asistir entre 8am y 9:30am o entre 5pm<br><center> y 7pm al gym o a las outfits disponibles.</center></h5>
+            <h5> Cuidado! No llevas ninguna asistencia esta semana.</center></h5>
             <center><h6></h6></center>
             <a class="close" href="#close"></a>
         </div>
@@ -241,7 +241,7 @@ $asisttot=$asistenciasperiodo;
             <center><h3><?php echo 'Estas en la semana '.$semanaactual;?></h3></center>
             <h3><?php echo 'Debes llevar '. $asistenciasnecesarias.' asistencias.'?></h3>
             <h3><?php echo 'Llevas '. $asistenciasperiodo.' asistencias.'?></h3>
-            <center><h4>Ponte al dia y evitaras bloqueos futuros.</h4></center>
+            <center><h4>Solo te falta una asistencia para completar la cuota semanal.</h4></center>
             <a class="close" href="#close"></a>
         </div>
 
@@ -250,6 +250,6 @@ $asisttot=$asistenciasperiodo;
             <center><h3><?php echo 'Estas en la semana '.$semanaactual;?></h3></center>
             <h3><?php echo 'Debes llevar '. $asistenciasnecesarias.' asistencias.'?></h3>
             <h3><?php echo 'Debes llevar '. $asistenciasperiodo.' asistencias.'?></h3>
-            <h4>Sigue asi y evitaras bloqueos futuros.</h4>
+            <h4>Ya cumpliste con las asistencias de esta semana.</h4>
             <a class="close" href="#close"></a>
         </div>
