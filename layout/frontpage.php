@@ -225,6 +225,8 @@ if ($hasmarket4) {
             echo $OUTPUT->get_setting('infobox2', 'format_html'); 
             }
             echo $OUTPUT->main_content();
+            if (is_siteadmin())
+            echo '<p align="right"><i class="fa fa-pencil-square-o"></i><a href="http://localhost:81/moodle/admin/settings.php?section=theme_bcu_frontpage_blocks"> Editar Pagina Principal</a></p>';
             echo $OUTPUT->course_content_footer();
             ?>
         </section>
